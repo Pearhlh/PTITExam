@@ -36,10 +36,10 @@ $(document).ready(function () {
 
       var inputElement = $(
         '<input class="form-check-input" type="radio" name="q' +
-          (i + 1) +
-          '" value="a' +
-          (j + 1) +
-          '">'
+        (i + 1) +
+        '" value="a' +
+        (j + 1) +
+        '">'
       );
       answerElement.append(inputElement);
 
@@ -71,4 +71,25 @@ $(document).ready(function () {
   $(".button_submit").on("click", function () {
     console.log(formExam.submit());
   });
+
+  // Đồng hồ đếm ngược
+  var countdownDate = new Date(); // Thời điểm kết thúc đếm ngược (tùy chỉnh theo nhu cầu)
+  countdownDate.setMinutes(countdownDate.getMinutes() + 1); // Ví dụ: 0.5 phút (30 giây)
+
+  var countdownInterval = setInterval(function () {
+    var now = new Date().getTime();
+    var distance = countdownDate - now;
+
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+    document.getElementById('timer').innerHTML = minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+
+    if (distance < 0) {
+      clearInterval(countdownInterval);
+      document.getElementById('timer').innerHTML = 'Hết giờ';
+      submitExam(); // Tự động nộp bài khi hết giờ
+    }
+  }, 1000);
 });
+
