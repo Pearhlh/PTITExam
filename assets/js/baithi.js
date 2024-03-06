@@ -11,6 +11,11 @@ $(document).ready(function () {
     .slice(-1)[0];
   const questions = questionOfExam[+pageCurrent - 1];
   var examHeader = exams[+pageCurrent - 1][1];
+  const correctAnswers = [];
+  for (let question of questions) {
+    correctAnswers.push(question.correctAnswer);
+  }
+
   $("#exam-header").text(examHeader);
   var questionContainer = $("#questionContainer");
   var answerBox = $("#answerBox");
@@ -36,10 +41,10 @@ $(document).ready(function () {
 
       var inputElement = $(
         '<input class="form-check-input" type="radio" name="q' +
-        (i + 1) +
-        '" value="a' +
-        (j + 1) +
-        '">'
+          (i + 1) +
+          '" value="a' +
+          (j + 1) +
+          '">'
       );
       answerElement.append(inputElement);
 
@@ -69,27 +74,66 @@ $(document).ready(function () {
     });
   }
   $(".button_submit").on("click", function () {
-    console.log(formExam.submit());
+    const userAnswers = formExam.serialize().split("&");
+    let userCorrectAnswer = 0;
+    let detailExam = {};
+    const detailAnswers = [];
+    for (let index in correctAnswers) {
+      if (userAnswers.indexOf(correctAnswers[index]) != -1) {
+        userCorrectAnswer++;
+        detailAnswers.push([index, "true"]);
+      } else {
+        detailAnswers.push([index, "false"]);
+      }
+    }
+    const examLocal = JSON.parse(localStorage.getItem("exam")) || [];
+    const examTmp = [...examLocal];
+    detailExam = {
+      name: examHeader,
+      detailAnswers,
+      correctNumber: userCorrectAnswer,
+      pass: userCorrectAnswer >= 5 ? "Đạt" : "Không đạt",
+    };
+    examTmp.push(detailExam);
+    localStorage.setItem("exam", JSON.stringify(examTmp));
+    window.location.href = `ketqua.html`;
   });
 
   // Đồng hồ đếm ngược
-  var countdownDate = new Date(); // Thời điểm kết thúc đếm ngược (tùy chỉnh theo nhu cầu)
-  countdownDate.setMinutes(countdownDate.getMinutes() + 1); // Ví dụ: 0.5 phút (30 giây)
+  let workTime = 25;
+  let breakTime = 5;
+  let seconds = "00";
 
-  var countdownInterval = setInterval(function () {
-    var now = new Date().getTime();
-    var distance = countdownDate - now;
+  $("#minutes").text(workTime);
+  $("#seconds").text(seconds);
 
-    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
-    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+  (function start() {
+    seconds = 59;
+    let workMinutes = workTime - 1;
+    let breakMinutes = breakTime - 1;
+    let breakCount = 0;
 
-    document.getElementById('timer').innerHTML = minutes + ':' + (seconds < 10 ? '0' : '') + seconds;
+    let timerFunction = function () {
+      $("#minutes").text(workMinutes);
+      $("#seconds").text(seconds);
 
-    if (distance < 0) {
-      clearInterval(countdownInterval);
-      document.getElementById('timer').innerHTML = 'Hết giờ';
-      submitExam(); // Tự động nộp bài khi hết giờ
-    }
-  }, 1000);
+      seconds = seconds - 1;
+
+      if (seconds === 0) {
+        workMinutes = workMinutes - 1;
+        if (workMinutes === -1) {
+          if (breakCount % 2 === 0) {
+            workMinutes = breakMinutes;
+            breakCount++;
+          } else {
+            workMinutes = workTime;
+            breakCount++;
+          }
+        }
+        seconds = 59;
+      }
+    };
+
+    setInterval(timerFunction, 1000);
+  })();
 });
-

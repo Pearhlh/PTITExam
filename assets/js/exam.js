@@ -3,18 +3,22 @@ const questionOfExam = [
     {
       question: "Đâu là ngôn ngữ lập trình phổ biến nhất?",
       answers: ["Python", "JavaScript", "Java", "C++"],
+      correctAnswer: "q1=a2",
     },
     {
       question: "Trình duyệt web phổ biến nhất hiện nay là gì?",
       answers: ["Google Chrome", "Mozilla Firefox", "Microsoft Edge"],
+      correctAnswer: "q2=a1",
     },
     {
       question: "Hệ điều hành Android là của công ty nào?",
       answers: ["Apple", "Google", "Microsoft"],
+      correctAnswer: "q3=a2",
     },
     {
       question: "Ngôn ngữ đánh dấu được sử dụng để tạo nội dung website là gì?",
       answers: ["HTML", "CSS", "JavaScript"],
+      correctAnswer: "q4=a1",
     },
     {
       question: 'Trong lập trình, "API" viết tắt của cụm từ gì?',
@@ -23,10 +27,12 @@ const questionOfExam = [
         "Advanced Programming Interface",
         "Application Protocol Interface",
       ],
+      correctAnswer: "q5=a1",
     },
     {
       question: "Đâu là một kiểu dữ liệu trong ngôn ngữ lập trình JavaScript?",
       answers: ["String", "Boolean", "Integer"],
+      correctAnswer: "q6=a1",
     },
     {
       question: "Hàm console.log() được sử dụng để làm gì trong JavaScript?",
@@ -35,22 +41,27 @@ const questionOfExam = [
         "In ra giá trị của biến trong console",
         "Thực thi một hành động nhất định",
       ],
+      correctAnswer: "q7=a2",
     },
     {
       question: "Đâu là một phần tử block-level trong HTML?",
       answers: ["span", "div", "a"],
+      correctAnswer: "q8=a2",
     },
     {
-      question: 'Trong lập trình, "API" viết tắt của cụm từ gì?',
+      question: "CSS viết tắt của cụm từ gì?",
       answers: [
-        "Application Programming Interface",
-        "Advanced Programming Interface",
-        "Application Protocol Interface",
+        "Cascading Style Sheet",
+        "Creative Style Sheets",
+        "Computer Style Sheets",
       ],
+      correctAnswer: "q9=a1",
     },
     {
-      question: "Đâu là một kiểu dữ liệu trong ngôn ngữ lập trình JavaScript?",
-      answers: ["String", "Boolean", "Integer"],
+      question:
+        "Đâu là thuộc tính để thay đổi kích thước chữ của một phần tử trong CSS?",
+      answers: ["font-size", "text-size", "font-style"],
+      correctAnswer: "q10=a1",
     },
   ],
 ];

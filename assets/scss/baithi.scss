@@ -23,6 +23,9 @@
                 font-weight: 800;
             }
             .form-check {
+                input{
+                    
+                }
                 input[type="radio"]:checked {
                     background-color: $colorTheme;
                     & + label {
@@ -111,4 +114,59 @@
             }
         }
     }
+}
+.container_timer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 1.6rem;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16rem;
+    height: 16rem;
+    border-radius: 50%;
+    color: $colorTextBlack;
+}
+
+.circle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 16rem;
+    height: 16rem;
+    border-radius: 50%;
+    background-color: $colorThemeSoft;
+    position: relative;
+}
+
+.circle::before {
+    content: "";
+    position: absolute;
+    width: 94%;
+    height: 94%;
+    border-radius: 100%;
+    background-color: $colorText;
+}
+
+.time {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+.time p {
+    font-weight: 500;
+    font-size: 2.2rem;
+}
+
+.time p:nth-of-type(2) {
+    position: relative;
+    top: -0.5rem;
+    margin-inline: 1rem;
 }

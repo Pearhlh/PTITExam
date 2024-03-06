@@ -1,28 +1,38 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-    <link rel="stylesheet" href="result.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" />
+    <link
+      rel="stylesheet"
+      href="result.css" />
     <title>Quiz Result</title>
-</head>
+  </head>
 
-<body>
+  <body>
     <div class="container">
-        <h1>Kết quả</h1>
-        <p id="result"></p>
-        <p id="score"></p>
-        <button id="reviewBtn">Xem lại bài làm</button>
+      <h1>Kết quả</h1>
+      <p id="result"></p>
+      <p id="score"></p>
+      <button id="reviewBtn">Xem lại bài làm</button>
     </div>
-    <div id="reviewSection" class="hidden review">
-        <h1 id="exam-header" class="mt-4">Kiểm tra Nhập môn lập trình</h1>
-        <form class="question" id="questionContainer">
-            <!-- Các câu hỏi sẽ được thêm vào đây từ JavaScript -->
-        </form>
+    <div
+      id="reviewSection"
+      class="hidden review">
+      <h1
+        id="exam-header"
+        class="mt-4">
+        Kiểm tra Nhập môn lập trình
+      </h1>
+      <form
+        class="question"
+        id="questionContainer"></form>
     </div>
     <script src="result.js"></script>
-</body>
-
+  </body>
 </html>
