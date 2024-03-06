@@ -24,6 +24,7 @@
     <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/2.0.1/css/dataTables.dataTables.min.css" />
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
     <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/admin-examlist.css" />
     <link href="assets/css/admin-dashboard.css" rel="stylesheet" />
 </head>
 
@@ -133,20 +134,73 @@
                                 <div class="modal fade" id="newExamModal" data-bs-backdrop="static"
                                     data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel"
                                     aria-hidden="true">
-                                    <div class="modal-dialog">
+                                    <div class="modal-dialog modal-lg">
                                         <div class="modal-content">
                                             <div class="modal-header">
-                                                <h1 class="modal-title fs-5" id="staticBackdropLabel">Modal title</h1>
+                                                <h1>Thêm bài thi mới</h1>
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal"
                                                     aria-label="Close"></button>
                                             </div>
-                                            <div class="modal-body">
-                                                ...
+                                            <div class="modal-body" style="font-size: large;">
+                                                <form id="examForm">
+                                                    <div class="form-group">
+                                                        <label for="examName">Tên Bài Thi:</label>
+                                                        <input type="text" class="form-control" id="examName"
+                                                            name="examName" required>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="examDescription">Mô Tả:</label>
+                                                        <textarea class="form-control" id="examDescription"
+                                                            name="examDescription" rows="4" required></textarea>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="examType">Loại:</label>
+                                                        <select class="form-control" id="examType" name="examType"
+                                                            required>
+                                                            <option value="tudo">Tự Do</option>
+                                                            <option value="thoigian">Thời Gian Cụ Thể</option>
+                                                        </select>
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="examStart">Bắt đầu:</label>
+                                                        <input type="datetime-local" id="examStart" />
+                                                    </div>
+
+                                                    <div class="form-group">
+                                                        <label for="examEnd">Kết thúc:</label>
+                                                        <input type="datetime-local" id="examEnd" />
+                                                    </div>
+
+                                                    <div id="timeLimitContainer" class="form-group hidden">
+                                                        <label for="examTimeLimit">Thời lượng (phút):</label>
+                                                        <input type="number" class="form-control" id="examTimeLimit"
+                                                            name="examTimeLimit" min="1">
+                                                    </div>
+                                                    <span>Danh sách câu hỏi</span><br />
+                                                    <div class="input-question">
+
+                                                        <!-- Thêm một button mới để thêm câu hỏi -->
+                                                        <button type="button" class="btn btn-success"
+                                                            onclick="addQuestionForm()">Thêm Câu Hỏi</button>
+
+                                                        <label for="excelFile">hoặc thêm từ file excel:</label>
+                                                        <input type="file" class="form-control-file" id="excelFile"
+                                                            accept=".xls, .xlsx">
+
+
+                                                        <!-- Thêm button để xử lý việc đọc file Excel -->
+                                                        <button type="button" class="btn btn-primary"
+                                                            onclick="readExcelFile()">Đọc File Excel</button>
+                                                    </div>
+                                                </form>
                                             </div>
                                             <div class="modal-footer">
                                                 <button type="button" class="btn btn-secondary"
-                                                    data-bs-dismiss="modal">Cancel</button>
-                                                <button type="button" class="btn btn-primary">Understood</button>
+                                                    data-bs-dismiss="modal">Hủy</button>
+                                                <button type="button" class="btn btn-primary">Lưu</button>
                                             </div>
                                         </div>
                                     </div>
@@ -182,7 +236,8 @@
     <script src="assets/vendor/echarts.min.js"></script>
     <script type="text/javascript" charset="utf8" src="https://code.jquery.com/jquery-3.5.1.js"></script>
     <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/2.0.1/js/dataTables.min.js"></script>
-    <script src="assets/js/main.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
+    <script src="assets/js/admin-examlist.js"></script>
     <script type="module" src="assets/js/home.js"></script>
 </body>
 
