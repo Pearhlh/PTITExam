@@ -40,7 +40,11 @@ $(document).ready(function () {
       var answerElement = $('<div class="form-check"></div>');
 
       var inputElement = $(
-        '<input class="form-check-input" type="radio" name="q' +
+        '<input id="answer' +
+          (i + 1) +
+          "-" +
+          (j + 1) +
+          '" class="form-check-input" type="radio" name="q' +
           (i + 1) +
           '" value="a' +
           (j + 1) +
@@ -49,7 +53,11 @@ $(document).ready(function () {
       answerElement.append(inputElement);
 
       var answerLabel = $(
-        '<label class="form-check-label" for="answer' + (j + 1) + '"></label>'
+        '<label class="form-check-label" for="answer' +
+          (i + 1) +
+          "-" +
+          (j + 1) +
+          '"></label>'
       );
       answerLabel.text(questions[i].answers[j]);
       answerElement.append(answerLabel);
