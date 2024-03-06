@@ -16,12 +16,4 @@ $(document).ready(function () {
     $(".nav-item").not(this).find(".nav-link").addClass("collapsed");
     $(this).find(".nav-link").removeClass("collapsed");
   });
-  const fileName = "/exam.js";
-  fetch(fileName)
-    .then((response) => response.json())
-    .then((additionalData) => {
-      // Thêm object vào file exam.js
-      console.log(additionalData);
-    })
-    .catch((error) => console.log(error));
 });

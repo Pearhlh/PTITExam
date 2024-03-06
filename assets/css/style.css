@@ -1,12 +1,15 @@
 html {
   font-size: 62.5%;
 }
+
 html ::-webkit-scrollbar {
   width: 0.6rem;
 }
+
 html ::-webkit-scrollbar-track {
   background: rgba(128, 128, 128, 0.336);
 }
+
 html ::-webkit-scrollbar-thumb {
   background: rgba(214, 20, 10, 0.8431372549);
   border-radius: 2rem;
@@ -35,6 +38,7 @@ a {
     padding: 20px;
   }
 }
+
 .dropdown-menu {
   left: 200%;
   border-radius: 4px;
@@ -69,17 +73,21 @@ a {
     border-left: 1px solid #eaedf1;
   }
 }
+
 @keyframes dropdown-animate {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
+
   0% {
     opacity: 0;
   }
 }
+
 .header {
   transition: all 0.5s;
   z-index: 997;
@@ -115,12 +123,14 @@ a {
     visibility: hidden;
     opacity: 0;
   }
+
   .header .search-bar-show {
     top: 60px;
     visibility: visible;
     opacity: 1;
   }
 }
+
 .header .search-form {
   width: 100%;
 }
@@ -158,15 +168,19 @@ a {
   width: 240px;
   list-style: none;
 }
+
 .header-nav ul .nav-item {
   width: 100%;
 }
+
 .header-nav ul .nav-item a {
   font-size: 1.4rem;
 }
+
 .header-nav ul .nav-item a img {
   margin-right: 1rem;
 }
+
 .header-nav .nav-profile span {
   flex: 1;
   overflow: hidden;
@@ -174,15 +188,18 @@ a {
   font-weight: 600;
   font-size: 1.4rem;
 }
+
 .header-nav .profile {
   width: 240px;
   padding-bottom: 0;
   top: 8px !important;
 }
+
 .header-nav .profile span {
   font-size: 1.4rem;
   font-weight: 500;
 }
+
 .header-nav .dropdown-header {
   color: black;
   font-weight: 600;
@@ -227,26 +244,33 @@ a {
     left: -300px;
   }
 }
+
 @media (min-width: 1200px) {
+
   #main,
   #footer {
     margin-left: 300px;
   }
 }
+
 @media (max-width: 1199px) {
   .toggle-sidebar .sidebar {
     left: 0;
   }
 }
+
 @media (min-width: 1200px) {
+
   .toggle-sidebar #main,
   .toggle-sidebar #footer {
     margin-left: 0;
   }
+
   .toggle-sidebar .sidebar {
     left: -300px;
   }
 }
+
 .sidebar-nav {
   padding: 0;
   margin: 0;
@@ -354,11 +378,13 @@ a {
   font-size: 14px;
   transition: all 0.3s;
 }
+
 .footer .copyright {
   font-size: 1.5rem;
   text-align: center;
   color: black;
 }
+
 .footer .copyright strong {
   color: rgba(214, 20, 10, 0.8431372549);
 }
@@ -369,6 +395,7 @@ a {
   font-size: 13px;
   color: black;
 }
+
 .footer .credits a {
   font-size: 1.4rem;
   font-weight: 800;
@@ -380,18 +407,21 @@ a {
   justify-content: center;
   width: 300px;
 }
+
 .logo_ptit a {
   display: flex;
   height: 40px;
   width: 100%;
   margin-left: 15px;
 }
+
 .logo_ptit a img {
   width: min-content;
   height: 100%;
   object-fit: contain;
   object-position: center;
 }
+
 .logo_ptit a span {
   flex: 1;
   margin-left: 10px;
@@ -406,15 +436,18 @@ a {
 .card-body {
   padding: 3rem;
 }
+
 .card-body .card-title {
   margin: 2rem 0;
   font-size: 2.8rem;
   font-weight: 600;
   color: rgba(214, 20, 10, 0.8431372549);
 }
+
 .card-body .filter {
   margin-bottom: 1rem;
 }
+
 .card-body .filter span {
   display: inline-block;
   font-weight: 600;
@@ -422,6 +455,7 @@ a {
   margin-right: 1rem;
   color: black;
 }
+
 .card-body .filter select {
   font-size: 1.3rem;
   font-weight: 600;
@@ -429,10 +463,12 @@ a {
   border-radius: 1rem;
   padding: 0.5rem 1.4rem;
 }
-.card-body .filter select > * {
+
+.card-body .filter select>* {
   font-size: 1.4rem;
   font-weight: 600;
 }
+
 .card-body .filter select:hover {
   cursor: pointer;
 }

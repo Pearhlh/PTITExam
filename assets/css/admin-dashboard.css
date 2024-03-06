@@ -1,0 +1,168 @@
+label[for="dt-length-0"] {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+label[for="dt-length-0"] #dt-length-0 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    border: 2px solid rgba(214, 20, 10, 0.8431372549);
+    border-radius: 1rem;
+    padding: 0.5rem 1.8rem;
+    margin: 0 0.6rem;
+}
+
+label[for="dt-length-0"] #dt-length-0:hover {
+    cursor: pointer;
+}
+
+label[for="dt-length-0"] #dt-length-0>* {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+#pageTitle {
+    color: rgba(214, 20, 10, 0.8431372549);
+    font-weight: 600 !important;
+}
+
+.dt-search {
+    display: flex;
+    align-items: center;
+}
+
+.dt-search label[for="dt-search-0"] {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.dt-search input {
+    flex: 1;
+    margin-left: 1rem !important;
+    padding: 0.5rem 1.2rem !important;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.dt-layout-row {
+    margin-bottom: 1rem;
+}
+
+.dt-layout-row .dt-start,
+.dt-layout-row .dt-end {
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+
+.dt-layout-row .dt-end .dt-paging button {
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 0.4rem 1.6rem;
+    border-radius: 0.8rem;
+    outline: none !important;
+    color: black !important;
+}
+
+.dt-layout-row .dt-end .dt-paging button:hover {
+    cursor: pointer;
+    color: inherit !important;
+    background: rgba(106, 98, 98, 0.108) !important;
+}
+
+.dt-layout-row .dt-end .dt-paging button.current:hover,
+.dt-layout-row .dt-end .dt-paging button.disabled:hover {
+    cursor: pointer;
+    color: inherit !important;
+}
+
+.dataTable {
+    width: 100% !important;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.dataTable thead {
+    color: white;
+    background-color: rgba(214, 20, 10, 0.8431372549);
+}
+
+.dataTable thead th {
+    padding: 2rem;
+}
+
+.dataTable td {
+    padding: 2rem !important;
+}
+
+.dataTable tr:hover {
+    background-color: rgba(106, 98, 98, 0.108);
+    cursor: pointer;
+}
+
+/* Info Cards */
+.info-card {
+    padding-bottom: 10px;
+}
+
+.info-card h6 {
+    font-size: 28px;
+    color: #012970;
+    font-weight: 700;
+    margin: 0;
+    padding: 0;
+}
+
+.card-icon {
+    font-size: 32px;
+    line-height: 0;
+    width: 64px;
+    height: 64px;
+    flex-shrink: 0;
+    flex-grow: 0;
+}
+
+.sales-card .card-icon {
+    color: #4154f1;
+    background: #dfdfff;
+}
+
+.revenue-card .card-icon {
+    color: #2eca6a;
+    background: #e0f8e9;
+}
+
+.customers-card .card-icon {
+    color: #ff771d;
+    background: #ffecdf;
+}
+
+.avg-point-card .card-icon {
+    color: #fb1dff;
+    background-color: #fbd3fe;
+}
+
+.card-title {
+    padding: 20px 0 15px 0;
+    font-size: 18px;
+    font-weight: 500;
+    color: #012970;
+    /* font-family: "Poppins", sans-serif; */
+}
+
+.card-title span {
+    color: #899bbd;
+    font-size: 14px;
+    font-weight: 400;
+}
+
+.card-body {
+    padding: 0 20px 20px 20px;
+}
+
+.card-img-overlay {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.row {
+    margin-bottom: 15px;
+}
