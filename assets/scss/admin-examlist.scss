@@ -1,0 +1,148 @@
+@import "./variable";
+.input-question {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.filter {
+    display: flex;
+    align-items: center;
+    .btn_add {
+        font-size: 1.3rem;
+        font-weight: 600;
+        color: $colorTextBlack;
+        background-color: $colorText;
+        border: 2px solid rgba(214, 20, 10, 0.8431372549);
+        border-radius: 1rem;
+        padding: 0.5rem 1.4rem;
+        margin-left: 1.4rem;
+    }
+}
+.modal {
+    &-content {
+        border-radius: 1rem;
+        padding: 3rem;
+    }
+    &-header {
+        padding: 0;
+        border: none !important;
+        h1 {
+            width: 100%;
+            text-align: center;
+            font-weight: 600;
+            font-size: 2.2rem;
+        }
+    }
+    .btn-close {
+        margin: 0 0.5rem;
+        padding: 0.5rem;
+        font-size: 1.4rem;
+    }
+    &-body {
+        padding: 0;
+        #examForm {
+            .time {
+                display: flex !important;
+                justify-content: space-between;
+            }
+            .header_list_question {
+                font-size: 1.5rem;
+                font-weight: 500;
+                margin-bottom: 0.6rem;
+                margin-left: 0.6rem;
+            }
+            .form-group {
+                margin-bottom: 1.4rem;
+                label {
+                    font-weight: 500;
+                    font-size: 1.5rem;
+                    margin-left: 0.6rem;
+                    margin-bottom: 0.6rem;
+                }
+                input,
+                textarea {
+                    font-size: 1.4rem;
+                    padding: 0.8rem 1rem;
+                    border-radius: 1rem;
+                    border: 2px solid $formBackgroundTr;
+                }
+                select {
+                    font-size: 1.3rem;
+                    font-weight: 500;
+                    border: 2px solid $formBackgroundTr;
+                    border-radius: 1rem;
+                    padding: 0.8rem 1.4rem;
+                    option {
+                        font-weight: inherit;
+                    }
+                }
+                label[for="examStart"],
+                label[for="examEnd"] {
+                    min-width: 80px;
+                }
+            }
+            .question_container {
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+                .input-question {
+                    button,
+                    label {
+                        font-size: 1.2rem;
+                        border-radius: 0.6rem;
+                        padding: 0.6rem 1.4rem;
+                    }
+                    button {
+                        background-color: #0d6efd;
+                    }
+                    label {
+                        color: $colorText;
+                        background-color: rgb(15, 188, 15);
+                        margin-left: 1rem;
+                    }
+                }
+            }
+        }
+    }
+}
+
+.modal-footer {
+    border-top: 2px solid $formBackgroundTr;
+    padding: 1rem 0 0 0;
+    margin-top: 1rem;
+    button {
+        margin: 0;
+        font-size: 1.2rem;
+        border-radius: 0.6rem;
+        padding: 0.8rem 1.6rem;
+        &:first-child {
+            margin-right: 2rem;
+        }
+    }
+}
+
+.question-form {
+    margin-top: 2rem;
+    h4 {
+        font-size: 1.5rem;
+        margin-bottom: 0.8rem;
+    }
+    input {
+        font-size: 1.5rem;
+        padding: 1.2rem;
+        margin-bottom: 1.2rem;
+        border: 2px solid $formBackgroundTr;
+    }
+    button {
+        padding: 0.9rem 1.6rem;
+    }
+}
+.btn_view_static {
+    font-weight: 600;
+    border: none;
+    outline: none;
+    background-color: transparent;
+    &:hover {
+        text-decoration: underline;
+    }
+}

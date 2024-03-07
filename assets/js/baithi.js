@@ -26,14 +26,11 @@ $(document).ready(function () {
     var questionElement = $('<div class="card-header"></div>');
     questionElement.attr("id", "q" + (i + 1));
     var questionTitle = $("<h2></h2>");
-    questionTitle.text("Câu hỏi " + (i + 1) + ":");
+    questionTitle.text("Câu hỏi " + (i + 1) + ": " + questions[i].question);
     questionElement.append(questionTitle);
     questionContainer.append(questionElement);
 
     var questionContent = $('<div class="card-body"></div>');
-    var questionText = $("<p></p>");
-    questionText.text(questions[i].question);
-    questionContent.append(questionText);
     questionContainer.append(questionContent);
 
     for (var j = 0; j < questions[i].answers.length; j++) {
@@ -65,7 +62,7 @@ $(document).ready(function () {
       questionContent.append(answerElement);
     }
 
-    var answerLink = $('<a href="#q' + (i + 1) + '">' + (i + 1) + "</a>");
+    var answerLink = $('<a href="#q' + i + '">' + (i + 1) + "</a>");
 
     // Add link to answer cell
     var cell = $('<div id="cell' + (i + 1) + '" class="answer-cell"></div>');

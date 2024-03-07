@@ -2,19 +2,23 @@
   display: flex;
   justify-content: space-between;
 }
+.exam .container {
+  margin-top: 2rem;
+}
 .exam .question {
   width: 100%;
 }
 .exam .question .card-header {
   border-radius: 1rem !important;
   background-color: rgba(128, 128, 128, 0.237);
+  padding: 2rem;
 }
 .exam .question .card-header h2 {
-  width: 20%;
+  width: 100%;
   margin: 0;
   color: black;
-  font-size: 1.6rem;
-  font-weight: 600;
+  font-size: 1.7rem;
+  font-weight: 700;
   padding: 0.4rem;
 }
 .exam .question .card-body {
@@ -24,11 +28,31 @@
 .exam .question .card-body p {
   font-weight: 800;
 }
+.exam .question .card-body .form-check {
+  border-radius: 1rem;
+  margin-bottom: 1rem;
+  padding-left: 0;
+}
+.exam .question .card-body .form-check input {
+  display: none;
+}
 .exam .question .card-body .form-check input[type=radio]:checked {
   background-color: rgba(214, 20, 10, 0.8431372549);
 }
 .exam .question .card-body .form-check input[type=radio]:checked + label {
-  font-weight: 600;
+  font-weight: 700;
+  background-color: rgba(245, 165, 35, 0.5019607843);
+  border: 2px solid rgba(245, 165, 35, 0.6862745098);
+}
+.exam .question .card-body .form-check label {
+  width: 100%;
+  height: 100%;
+  padding: 1.2rem 1.2rem 1.2rem 3rem;
+  border-radius: 1rem;
+  background-color: rgba(128, 128, 128, 0.1);
+}
+.exam .question .card-body .form-check label:hover {
+  cursor: pointer;
 }
 .exam #exam-header {
   font-weight: 800;

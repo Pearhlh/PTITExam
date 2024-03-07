@@ -1,5 +1,146 @@
 .input-question {
-    display: flex;
-    align-items: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.filter {
+  display: flex;
+  align-items: center;
+}
+.filter .btn_add {
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: black;
+  background-color: white;
+  border: 2px solid rgba(214, 20, 10, 0.8431372549);
+  border-radius: 1rem;
+  padding: 0.5rem 1.4rem;
+  margin-left: 1.4rem;
+}
+
+.modal-content {
+  border-radius: 1rem;
+  padding: 3rem;
+}
+.modal-header {
+  padding: 0;
+  border: none !important;
+}
+.modal-header h1 {
+  width: 100%;
+  text-align: center;
+  font-weight: 600;
+  font-size: 2.2rem;
+}
+.modal .btn-close {
+  margin: 0 0.5rem;
+  padding: 0.5rem;
+  font-size: 1.4rem;
+}
+.modal-body {
+  padding: 0;
+}
+.modal-body #examForm .time {
+  display: flex !important;
+  justify-content: space-between;
+}
+.modal-body #examForm .header_list_question {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 0.6rem;
+  margin-left: 0.6rem;
+}
+.modal-body #examForm .form-group {
+  margin-bottom: 1.4rem;
+}
+.modal-body #examForm .form-group label {
+  font-weight: 500;
+  font-size: 1.5rem;
+  margin-left: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+.modal-body #examForm .form-group input,
+.modal-body #examForm .form-group textarea {
+  font-size: 1.4rem;
+  padding: 0.8rem 1rem;
+  border-radius: 1rem;
+  border: 2px solid rgba(128, 128, 128, 0.237);
+}
+.modal-body #examForm .form-group select {
+  font-size: 1.3rem;
+  font-weight: 500;
+  border: 2px solid rgba(128, 128, 128, 0.237);
+  border-radius: 1rem;
+  padding: 0.8rem 1.4rem;
+}
+.modal-body #examForm .form-group select option {
+  font-weight: inherit;
+}
+.modal-body #examForm .form-group label[for=examStart],
+.modal-body #examForm .form-group label[for=examEnd] {
+  min-width: 80px;
+}
+.modal-body #examForm .question_container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.modal-body #examForm .question_container .input-question button,
+.modal-body #examForm .question_container .input-question label {
+  font-size: 1.2rem;
+  border-radius: 0.6rem;
+  padding: 0.6rem 1.4rem;
+}
+.modal-body #examForm .question_container .input-question button {
+  background-color: #0d6efd;
+}
+.modal-body #examForm .question_container .input-question label {
+  color: white;
+  background-color: rgb(15, 188, 15);
+  margin-left: 1rem;
+}
+
+.modal-footer {
+  border-top: 2px solid rgba(128, 128, 128, 0.237);
+  padding: 1rem 0 0 0;
+  margin-top: 1rem;
+}
+.modal-footer button {
+  margin: 0;
+  font-size: 1.2rem;
+  border-radius: 0.6rem;
+  padding: 0.8rem 1.6rem;
+}
+.modal-footer button:first-child {
+  margin-right: 2rem;
+}
+
+.question-form {
+  margin-top: 2rem;
+}
+.question-form h4 {
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+.question-form input {
+  font-size: 1.5rem;
+  padding: 1.2rem;
+  margin-bottom: 1.2rem;
+  border: 2px solid rgba(128, 128, 128, 0.237);
+}
+.question-form button {
+  padding: 0.9rem 1.6rem;
+}
+
+.btn_view_static {
+  font-weight: 600;
+  border: none;
+  outline: none;
+  background-color: transparent;
+}
+.btn_view_static:hover {
+  text-decoration: underline;
+}
+
+/*# sourceMappingURL=admin-examlist.css.map */
