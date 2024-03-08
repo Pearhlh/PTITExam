@@ -51,7 +51,7 @@
 
     <link
       rel="stylesheet"
-      href="assets/css/admin-examlist.css" />
+      href="assets/css/home-admin.css" />
   </head>
 
   <body>
@@ -59,7 +59,7 @@
       id="header"
       class="header fixed-top d-flex align-items-center">
       <div class="logo_ptit">
-        <a href="index.html">
+        <a href="home-admin.html">
           <img
             src="assets/img/logo.png"
             alt="" />
@@ -78,9 +78,8 @@
                 src="assets/img/profile-img.jpg"
                 alt="Profile"
                 class="rounded-circle" />
-              <span class="d-none d-md-block dropdown-toggle ps-2"
-                >An Hoang Hieu Huy</span
-              >
+              <span
+                class="d-none d-md-block dropdown-toggle ps-2 name_user"></span>
             </a>
 
             <ul
@@ -119,7 +118,7 @@
                 <hr class="dropdown-divider" />
               </li>
 
-              <li>
+              <li class="button_signout">
                 <a
                   class="dropdown-item d-flex align-items-center"
                   href="#">
@@ -141,7 +140,7 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            href="index.html"
+            href="home-admin.html"
             title="index">
             <i class="bi bi-grid"></i>
             <span>Trang chủ</span>
@@ -456,68 +455,9 @@
                       <h5 class="card-title">Phân phối điểm số</h5>
 
                       <div
-                        id="trafficChart"
+                        id="chart"
                         style="min-height: 400px"
                         class="echart"></div>
-
-                      <script>
-                        document.addEventListener("DOMContentLoaded", () => {
-                          echarts
-                            .init(document.querySelector("#trafficChart"))
-                            .setOption({
-                              tooltip: {
-                                trigger: "item",
-                              },
-                              legend: {
-                                top: "5%",
-                                left: "center",
-                              },
-                              series: [
-                                {
-                                  name: "Access From",
-                                  type: "pie",
-                                  radius: ["40%", "70%"],
-                                  avoidLabelOverlap: false,
-                                  label: {
-                                    show: false,
-                                  },
-                                  emphasis: {
-                                    label: {
-                                      show: false,
-                                      fontSize: "18",
-                                      fontWeight: "bold",
-                                    },
-                                  },
-                                  labelLine: {
-                                    show: false,
-                                  },
-                                  data: [
-                                    {
-                                      value: 15,
-                                      name: "Tốt",
-                                    },
-                                    {
-                                      value: 63,
-                                      name: "Khá",
-                                    },
-                                    {
-                                      value: 37,
-                                      name: "Trung bình",
-                                    },
-                                    {
-                                      value: 20,
-                                      name: "Yếu",
-                                    },
-                                    {
-                                      value: 10,
-                                      name: "Không đạt",
-                                    },
-                                  ],
-                                },
-                              ],
-                            });
-                        });
-                      </script>
                     </div>
                   </div>
                 </div>
@@ -541,7 +481,6 @@
       </div>
     </div>
     <script src="assets/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/echarts.min.js"></script>
     <script
       type="text/javascript"
       charset="utf8"
@@ -550,10 +489,10 @@
       type="text/javascript"
       charset="utf8"
       src="https://cdn.datatables.net/2.0.1/js/dataTables.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.16.9/xlsx.full.min.js"></script>
     <script src="assets/js/main.js"></script>
-    <script
-      type="module"
-      src="assets/js/admin-examlist.js"></script>
+    <script src="assets/js/home-admin.js"></script>
+    <script src="assets/js/echarts.min.js"></script>
   </body>
 </html>

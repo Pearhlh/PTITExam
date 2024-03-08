@@ -16,4 +16,12 @@ $(document).ready(function () {
     $(".nav-item").not(this).find(".nav-link").addClass("collapsed");
     $(this).find(".nav-link").removeClass("collapsed");
   });
+
+  const user = JSON.parse(localStorage.getItem("user"));
+  $(".name_user").text(user.username);
+  $(".profile").find(".dropdown-header").html(`<h>${user.username}</h>`);
+  $(".button_signout").on("click", () => {
+    localStorage.removeItem("user");
+    window.location.href = "index.html";
+  });
 });

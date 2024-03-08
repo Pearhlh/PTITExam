@@ -246,7 +246,6 @@ a {
 }
 
 @media (min-width: 1200px) {
-
   #main,
   #footer {
     margin-left: 300px;
@@ -260,7 +259,6 @@ a {
 }
 
 @media (min-width: 1200px) {
-
   .toggle-sidebar #main,
   .toggle-sidebar #footer {
     margin-left: 0;
@@ -464,11 +462,17 @@ a {
   padding: 0.5rem 1.4rem;
 }
 
-.card-body .filter select>* {
+.card-body .filter select > * {
   font-size: 1.4rem;
   font-weight: 600;
 }
 
 .card-body .filter select:hover {
   cursor: pointer;
+}
+
+.name_user {
+  display: flex !important;
+  align-items: center;
+  justify-content: space-around;
 }

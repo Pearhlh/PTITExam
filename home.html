@@ -6,7 +6,7 @@
       content="width=device-width, initial-scale=1.0"
       name="viewport" />
 
-    <title>Dashboard - NiceAdmin Bootstrap Template</title>
+    <title>PTIT Exam - Home page</title>
     <meta
       content=""
       name="description" />
@@ -45,7 +45,7 @@
       rel="stylesheet"
       href="assets/css/style.css" />
     <link
-      href="assets/css/ketqua.css"
+      href="assets/css/home.css"
       rel="stylesheet" />
   </head>
 
@@ -142,18 +142,10 @@
             <span>Trang chủ</span>
           </a>
         </li>
-        <!-- <li class="nav-item">
-          <a
-            class="nav-link"
-            href="baithi.html"
-            title="luyentap">
-            <i class="bi bi-menu-button-wide"></i><span>Luyện tập</span>
-          </a>
-        </li> -->
         <li class="nav-item">
           <a
             class="nav-link"
-            href="#"
+            href="/ketqua.html"
             title="ketqua">
             <i class="bi bi-bar-chart"></i><span>Kết quả</span>
           </a>
@@ -166,13 +158,13 @@
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
-                <h5 class="card-title">Kết quả</h5>
+                <h5 class="card-title">Các bài thi</h5>
                 <div class="filter">
                   <span>Lọc theo</span>
                   <select id="statusFilter">
                     <option value="">Tất cả</option>
-                    <option value="Tham gia tự do">Điểm</option>
-                    <option value="Thời gian cụ thể">Trạng thái</option>
+                    <option value="Tham gia tự do">Tham gia tự do</option>
+                    <option value="Thời gian cụ thể">Thời gian cụ thể</option>
                   </select>
                 </div>
                 <table
@@ -180,9 +172,12 @@
                   class="display">
                   <thead>
                     <tr>
+                      <th>ID</th>
                       <th>Tên bài thi</th>
-                      <th>Điểm</th>
+                      <th>Bắt đầu</th>
+                      <th>Kết thúc</th>
                       <th>Trạng thái</th>
+                      <th>Kết quả</th>
                     </tr>
                   </thead>
                   <tbody></tbody>
@@ -213,6 +208,6 @@
     <script src="assets/js/main.js"></script>
     <script
       type="module"
-      src="assets/js/ketqua.js"></script>
+      src="assets/js/home.js"></script>
   </body>
 </html>
