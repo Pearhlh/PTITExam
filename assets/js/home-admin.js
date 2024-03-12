@@ -1,3 +1,5 @@
+// statistic modal
+
 const exams = [
   [
     "1",
@@ -5,7 +7,7 @@ const exams = [
     "10:00",
     "11:00",
     "Tham gia tự do",
-    "<button class='btn_view_static' data-bs-toggle='modal' data-bs-target='#static_modal'>Xem</button>",
+    "<button class='btn_view_statistic' onClick='openModal()' >Xem</button>",
   ],
   [
     "2",
@@ -13,7 +15,7 @@ const exams = [
     "12:00",
     "14:00",
     "Tham gia tự do",
-    "<button class='btn_view_static' data-bs-toggle='modal' data-bs-target='#static_modal'>Xem</button>",
+    "<button class='btn_view_statistic' data-bs-toggle='modal' data-bs-target='#statistic_modal'>Xem</button>",
   ],
   [
     "3",
@@ -21,7 +23,7 @@ const exams = [
     "16:00",
     "18:00",
     "Tham gia tự do",
-    "<button class='btn_view_static' data-bs-toggle='modal' data-bs-target='#static_modal'>Xem</button>",
+    "<button class='btn_view_statistic' data-bs-toggle='modal' data-bs-target='#statistic_modal'>Xem</button>",
   ],
   [
     "4",
@@ -29,9 +31,88 @@ const exams = [
     "10:00",
     "14:00",
     "Tham gia tự do",
-    "<button class='btn_view_static' data-bs-toggle='modal' data-bs-target='#static_modal'>Xem</button>",
+    "<button class='btn_view_statistic' data-bs-toggle='modal' data-bs-target='#statistic_modal'>Xem</button>",
   ],
 ];
+
+function openModal() {
+  var modal = new bootstrap.Modal(document.getElementById('statistic_modal'));
+
+  // Show the modal
+  modal.show();
+
+  // Load HTML content using Fetch API
+  fetch('exam-statistic.html')
+    .then(response => response.text())
+    .then(data => {
+      // Set the loaded HTML content to the modal body
+      document.querySelector('.statistic_modal').innerHTML = data;
+      var chart = document.createElement('div');
+      chart.id = 'myChart';
+      chart.style.width = '600px';
+      chart.style.height = '400px';
+      document.querySelector('.point-distribution').appendChild(chart);
+      echarts.init(document.getElementById('myChart'))
+        .setOption({
+          tooltip: {
+            trigger: "item",
+          },
+          legend: {
+            top: "5%",
+            left: "center",
+          },
+          series: [
+            {
+              name: "Access From",
+              type: "pie",
+              radius: ["40%", "70%"],
+              avoidLabelOverlap: false,
+              label: {
+                show: false,
+              },
+              emphasis: {
+                label: {
+                  show: false,
+                  fontSize: "18",
+                  fontWeight: "bold",
+                },
+              },
+              labelLine: {
+                show: false,
+              },
+              data: [
+                {
+                  value: 15,
+                  name: "Tốt",
+                },
+                {
+                  value: 63,
+                  name: "Khá",
+                },
+                {
+                  value: 37,
+                  name: "Trung bình",
+                },
+                {
+                  value: 20,
+                  name: "Yếu",
+                },
+                {
+                  value: 10,
+                  name: "Không đạt",
+                },
+              ],
+            },
+          ],
+        });
+      console.log(chart);
+
+    })
+    .catch(error => {
+      console.error('Error loading HTML file:', error);
+    });
+}
+
 $(document).ready(function () {
   var table = $("#myTable").DataTable({
     language: {
@@ -176,56 +257,5 @@ function processExcelData(jsonData) {
     // Tạo câu hỏi và thêm vào form sử dụng hàm addQuestionForm()
     addQuestionForm(questionContent, answers, correctAnswer);
   }
-  echarts.init($("#chart")[0]).setOption({
-    tooltip: {
-      trigger: "item",
-    },
-    legend: {
-      top: "5%",
-      left: "center",
-    },
-    series: [
-      {
-        name: "Access From",
-        type: "pie",
-        radius: ["40%", "70%"],
-        avoidLabelOverlap: false,
-        label: {
-          show: false,
-        },
-        emphasis: {
-          label: {
-            show: false,
-            fontSize: "18",
-            fontWeight: "bold",
-          },
-        },
-        labelLine: {
-          show: false,
-        },
-        data: [
-          {
-            value: 15,
-            name: "Tốt",
-          },
-          {
-            value: 63,
-            name: "Khá",
-          },
-          {
-            value: 37,
-            name: "Trung bình",
-          },
-          {
-            value: 20,
-            name: "Yếu",
-          },
-          {
-            value: 10,
-            name: "Không đạt",
-          },
-        ],
-      },
-    ],
-  });
 }
+
