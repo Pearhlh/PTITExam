@@ -174,3 +174,83 @@
   justify-content: center;
   flex-direction: column;
 }
+
+#pageTitle {
+  color: rgba(214, 20, 10, 0.8431372549);
+  font-weight: 600 !important;
+}
+
+/* Info Cards */
+
+.card-title {
+  color: rgba(214, 20, 10, 0.8431372549) !important;
+  font-weight: 600 !important;
+  font-size: 24px !important;
+}
+
+.info-card {
+  padding-bottom: 10px;
+}
+
+.info-card h6 {
+  font-size: 28px;
+  color: #012970;
+  font-weight: 700;
+  margin: 0;
+  padding: 0;
+}
+
+.card-icon {
+  font-size: 32px;
+  line-height: 0;
+  width: 64px;
+  height: 64px;
+  flex-shrink: 0;
+  flex-grow: 0;
+}
+
+.sales-card .card-icon {
+  color: #4154f1;
+  background: #dfdfff;
+}
+
+.revenue-card .card-icon {
+  color: #2eca6a;
+  background: #e0f8e9;
+}
+
+.customers-card .card-icon {
+  color: #ff771d;
+  background: #ffecdf;
+}
+
+.avg-point-card .card-icon {
+  color: #fb1dff;
+  background-color: #fbd3fe;
+}
+
+.card-title {
+  padding: 20px 0 15px 0;
+  font-size: 18px;
+  font-weight: 500;
+  color: #012970;
+  /* font-family: "Poppins", sans-serif; */
+}
+
+.card-title span {
+  color: #899bbd;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.card-body {
+  padding: 0 20px 20px 20px;
+}
+
+.card-img-overlay {
+  background-color: rgba(255, 255, 255, 0.6);
+}
+
+.row {
+  margin-bottom: 15px;
+}

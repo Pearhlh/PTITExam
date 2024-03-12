@@ -15,7 +15,7 @@ const exams = [
     "12:00",
     "14:00",
     "Tham gia tự do",
-    "<button class='btn_view_statistic' data-bs-toggle='modal' data-bs-target='#statistic_modal'>Xem</button>",
+    "<button class='btn_view_statistic' onClick='openModal()'>Xem</button>",
   ],
   [
     "3",
@@ -23,7 +23,7 @@ const exams = [
     "16:00",
     "18:00",
     "Tham gia tự do",
-    "<button class='btn_view_statistic' data-bs-toggle='modal' data-bs-target='#statistic_modal'>Xem</button>",
+    "<button class='btn_view_statistic' onClick='openModal()'>Xem</button>",
   ],
   [
     "4",
@@ -31,7 +31,7 @@ const exams = [
     "10:00",
     "14:00",
     "Tham gia tự do",
-    "<button class='btn_view_statistic' data-bs-toggle='modal' data-bs-target='#statistic_modal'>Xem</button>",
+    "<button class='btn_view_statistic' onClick='openModal()'>Xem</button>",
   ],
 ];
 
@@ -42,74 +42,64 @@ function openModal() {
   modal.show();
 
   // Load HTML content using Fetch API
-  fetch('exam-statistic.html')
-    .then(response => response.text())
-    .then(data => {
-      // Set the loaded HTML content to the modal body
-      document.querySelector('.statistic_modal').innerHTML = data;
-      var chart = document.createElement('div');
-      chart.id = 'myChart';
-      chart.style.width = '600px';
-      chart.style.height = '400px';
-      document.querySelector('.point-distribution').appendChild(chart);
-      echarts.init(document.getElementById('myChart'))
-        .setOption({
-          tooltip: {
-            trigger: "item",
+
+  var chart = document.createElement('div');
+  chart.id = 'myChart';
+  chart.style.width = '600px';
+  chart.style.height = '400px';
+  document.querySelector('.point-distribution').appendChild(chart);
+  echarts.init(document.getElementById('myChart'))
+    .setOption({
+      tooltip: {
+        trigger: "item",
+      },
+      legend: {
+        top: "5%",
+        left: "center",
+      },
+      series: [
+        {
+          name: "Access From",
+          type: "pie",
+          radius: ["40%", "70%"],
+          avoidLabelOverlap: false,
+          label: {
+            show: false,
           },
-          legend: {
-            top: "5%",
-            left: "center",
+          emphasis: {
+            label: {
+              show: false,
+              fontSize: "18",
+              fontWeight: "bold",
+            },
           },
-          series: [
+          labelLine: {
+            show: false,
+          },
+          data: [
             {
-              name: "Access From",
-              type: "pie",
-              radius: ["40%", "70%"],
-              avoidLabelOverlap: false,
-              label: {
-                show: false,
-              },
-              emphasis: {
-                label: {
-                  show: false,
-                  fontSize: "18",
-                  fontWeight: "bold",
-                },
-              },
-              labelLine: {
-                show: false,
-              },
-              data: [
-                {
-                  value: 15,
-                  name: "Tốt",
-                },
-                {
-                  value: 63,
-                  name: "Khá",
-                },
-                {
-                  value: 37,
-                  name: "Trung bình",
-                },
-                {
-                  value: 20,
-                  name: "Yếu",
-                },
-                {
-                  value: 10,
-                  name: "Không đạt",
-                },
-              ],
+              value: 15,
+              name: "Tốt",
+            },
+            {
+              value: 63,
+              name: "Khá",
+            },
+            {
+              value: 37,
+              name: "Trung bình",
+            },
+            {
+              value: 20,
+              name: "Yếu",
+            },
+            {
+              value: 10,
+              name: "Không đạt",
             },
           ],
-        });
-      console.log(chart);
-
-    })
-    .catch(error => {
-      console.error('Error loading HTML file:', error);
+        },
+      ],
     });
 }
 
