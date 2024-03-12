@@ -1,0 +1,107 @@
+label[for="dt-length-0"] {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+label[for="dt-length-0"] #dt-length-0 {
+    font-size: 1.3rem;
+    font-weight: 600;
+    border: 2px solid rgba(214, 20, 10, 0.8431372549);
+    border-radius: 1rem;
+    padding: 0.5rem 1.8rem;
+    margin: 0 0.6rem;
+}
+
+label[for="dt-length-0"] #dt-length-0:hover {
+    cursor: pointer;
+}
+
+label[for="dt-length-0"] #dt-length-0>* {
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+#pageTitle {
+    color: rgba(214, 20, 10, 0.8431372549);
+    font-weight: 600 !important;
+}
+
+.dt-search {
+    display: flex;
+    align-items: center;
+}
+
+.dt-search label[for="dt-search-0"] {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.dt-search input {
+    flex: 1;
+    margin-left: 1rem !important;
+    padding: 0.5rem 1.2rem !important;
+    font-size: 1.6rem;
+    font-weight: 600;
+}
+
+.dt-layout-row {
+    margin-bottom: 1rem;
+}
+
+.dt-layout-row .dt-start,
+.dt-layout-row .dt-end {
+    font-weight: 500;
+    font-size: 1.4rem;
+}
+
+.dt-layout-row .dt-end .dt-paging button {
+    font-size: 1.4rem;
+    font-weight: 500;
+    padding: 0.4rem 1.6rem;
+    border-radius: 0.8rem;
+    outline: none !important;
+    color: black !important;
+}
+
+.dt-layout-row .dt-end .dt-paging button:hover {
+    cursor: pointer;
+    color: inherit !important;
+    background: rgba(106, 98, 98, 0.108) !important;
+}
+
+.dt-layout-row .dt-end .dt-paging button.current:hover,
+.dt-layout-row .dt-end .dt-paging button.disabled:hover {
+    cursor: pointer;
+    color: inherit !important;
+}
+
+.dataTable {
+    width: 100% !important;
+    font-size: 1.4rem;
+    font-weight: 600;
+    border-collapse: collapse;
+}
+
+.dataTable thead {
+    color: white;
+    background-color: rgba(214, 20, 10, 0.8431372549);
+}
+
+.dataTable thead th {
+    padding: 2rem;
+    border: 1px solid #ddd;
+    padding: 8px;
+    /* text-align: left; */
+}
+
+.dataTable td {
+    padding: 2rem !important;
+    border: 1px solid #ddd;
+    padding: 8px;
+    /* text-align: left; */
+}
+
+.dataTable tr:hover {
+    background-color: rgba(106, 98, 98, 0.108);
+    cursor: pointer;
+}
