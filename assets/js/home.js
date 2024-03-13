@@ -15,11 +15,11 @@ $(document).ready(function () {
     },
     columns: [
       { width: "5%" },
-      { width: "20%" },
-      { width: "20%" },
-      { width: "20%" },
-      { width: "20%" },
-      { width: "20%" },
+      { width: "30%" },
+      { width: "15%" },
+      { width: "15%" },
+      { width: "25%" },
+      { width: "25%" },
     ],
     lengthMenu: [
       [5, 10, 20, -1],

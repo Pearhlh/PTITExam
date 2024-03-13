@@ -92,7 +92,7 @@ signInForm.addEventListener("submit", (e) => {
           };
           localStorage.setItem("user", JSON.stringify(newUser));
           if (user.role == "ADMIN") {
-            window.location.href = "home-admin.html";
+            window.location.href = "admin-dashboard.html";
             return 0;
           } else {
             window.location.href = "home.html";

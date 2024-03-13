@@ -8,6 +8,8 @@ const exams = [
     "11:00",
     "Tham gia tự do",
     "<button class='btn_view_statistic' onClick='openModal()' >Xem</button>",
+    "<button class='btn_view_statistic'>Sửa</button>",
+    "<button class='btn_view_statistic'>Xóa</button>",
   ],
   [
     "2",
@@ -16,6 +18,8 @@ const exams = [
     "14:00",
     "Tham gia tự do",
     "<button class='btn_view_statistic' onClick='openModal()'>Xem</button>",
+    "<button class='btn_view_statistic'>Sửa</button>",
+    "<button class='btn_view_statistic'>Xóa</button>",
   ],
   [
     "3",
@@ -24,6 +28,8 @@ const exams = [
     "18:00",
     "Tham gia tự do",
     "<button class='btn_view_statistic' onClick='openModal()'>Xem</button>",
+    "<button class='btn_view_statistic'>Sửa</button>",
+    "<button class='btn_view_statistic'>Xóa</button>",
   ],
   [
     "4",
@@ -32,75 +38,76 @@ const exams = [
     "14:00",
     "Tham gia tự do",
     "<button class='btn_view_statistic' onClick='openModal()'>Xem</button>",
+    "<button class='btn_view_statistic'>Sửa</button>",
+    "<button class='btn_view_statistic'>Xóa</button>",
   ],
 ];
 
 function openModal() {
-  var modal = new bootstrap.Modal(document.getElementById('statistic_modal'));
+  var modal = new bootstrap.Modal(document.getElementById("statistic_modal"));
 
   // Show the modal
   modal.show();
 
   // Load HTML content using Fetch API
 
-  var chart = document.createElement('div');
-  chart.id = 'myChart';
-  chart.style.width = '600px';
-  chart.style.height = '400px';
-  document.querySelector('.point-distribution').appendChild(chart);
-  echarts.init(document.getElementById('myChart'))
-    .setOption({
-      tooltip: {
-        trigger: "item",
-      },
-      legend: {
-        top: "5%",
-        left: "center",
-      },
-      series: [
-        {
-          name: "Access From",
-          type: "pie",
-          radius: ["40%", "70%"],
-          avoidLabelOverlap: false,
+  var chart = document.createElement("div");
+  chart.id = "myChart";
+  chart.style.width = "600px";
+  chart.style.height = "400px";
+  document.querySelector(".point-distribution").appendChild(chart);
+  echarts.init(document.getElementById("myChart")).setOption({
+    tooltip: {
+      trigger: "item",
+    },
+    legend: {
+      top: "5%",
+      left: "center",
+    },
+    series: [
+      {
+        name: "Access From",
+        type: "pie",
+        radius: ["40%", "70%"],
+        avoidLabelOverlap: false,
+        label: {
+          show: false,
+        },
+        emphasis: {
           label: {
             show: false,
+            fontSize: "18",
+            fontWeight: "bold",
           },
-          emphasis: {
-            label: {
-              show: false,
-              fontSize: "18",
-              fontWeight: "bold",
-            },
-          },
-          labelLine: {
-            show: false,
-          },
-          data: [
-            {
-              value: 15,
-              name: "Tốt",
-            },
-            {
-              value: 63,
-              name: "Khá",
-            },
-            {
-              value: 37,
-              name: "Trung bình",
-            },
-            {
-              value: 20,
-              name: "Yếu",
-            },
-            {
-              value: 10,
-              name: "Không đạt",
-            },
-          ],
         },
-      ],
-    });
+        labelLine: {
+          show: false,
+        },
+        data: [
+          {
+            value: 15,
+            name: "Tốt",
+          },
+          {
+            value: 63,
+            name: "Khá",
+          },
+          {
+            value: 37,
+            name: "Trung bình",
+          },
+          {
+            value: 20,
+            name: "Yếu",
+          },
+          {
+            value: 10,
+            name: "Không đạt",
+          },
+        ],
+      },
+    ],
+  });
 }
 
 $(document).ready(function () {
@@ -123,7 +130,9 @@ $(document).ready(function () {
       { width: "20%" },
       { width: "20%" },
       { width: "20%" },
-      { width: "20%" },
+      { width: "10%" },
+      { width: "10%" },
+      { width: "10%" },
     ],
     lengthMenu: [
       [5, 10, 20, -1],
@@ -248,4 +257,3 @@ function processExcelData(jsonData) {
     addQuestionForm(questionContent, answers, correctAnswer);
   }
 }
-
