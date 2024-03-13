@@ -8,8 +8,7 @@ const exams = [
     "11:00",
     "Tham gia tự do",
     "<button class='btn_view_statistic' onClick='openModal()' >Xem</button>",
-    "<button class='btn_view_statistic'>Sửa</button>",
-    "<button class='btn_view_statistic'>Xóa</button>",
+    "<button class='btn_view_statistic'>Sửa</button> <button class='btn_view_statistic'>Xóa</button>",
   ],
   [
     "2",
@@ -18,8 +17,7 @@ const exams = [
     "14:00",
     "Tham gia tự do",
     "<button class='btn_view_statistic' onClick='openModal()'>Xem</button>",
-    "<button class='btn_view_statistic'>Sửa</button>",
-    "<button class='btn_view_statistic'>Xóa</button>",
+    "<button class='btn_view_statistic'>Sửa</button> <button class='btn_view_statistic'>Xóa</button>",
   ],
   [
     "3",
@@ -28,8 +26,7 @@ const exams = [
     "18:00",
     "Tham gia tự do",
     "<button class='btn_view_statistic' onClick='openModal()'>Xem</button>",
-    "<button class='btn_view_statistic'>Sửa</button>",
-    "<button class='btn_view_statistic'>Xóa</button>",
+    "<button class='btn_view_statistic'>Sửa</button> <button class='btn_view_statistic'>Xóa</button>",
   ],
   [
     "4",
@@ -38,11 +35,39 @@ const exams = [
     "14:00",
     "Tham gia tự do",
     "<button class='btn_view_statistic' onClick='openModal()'>Xem</button>",
-    "<button class='btn_view_statistic'>Sửa</button>",
-    "<button class='btn_view_statistic'>Xóa</button>",
+    "<button class='btn_view_statistic'>Sửa</button> <button class='btn_view_statistic'>Xóa</button>",
   ],
 ];
-
+const students = [
+  [
+    "B21DCCN395",
+    "Tống Việt Hoàng",
+    "E21CQCN03-B",
+    "10",
+    "<button class='btn_view_statistic'>Xem</button>",
+  ],
+  [
+    "B21DCVT225",
+    "Lê Gia Huy",
+    "E21CQCN03-B",
+    "9.4",
+    "<button class='btn_view_statistic'>Xem</button>",
+  ],
+  [
+    "B21DCAT021",
+    "Mai Xuân An",
+    "E21CQCN03-B",
+    "9.4",
+    "<button class='btn_view_statistic'>Xem</button>",
+  ],
+  [
+    "B21DCVT188",
+    "Đậu Quang Hiếu",
+    "E21CQCN03-B",
+    "9.6",
+    "<button class='btn_view_statistic'>Xem</button>",
+  ],
+];
 function openModal() {
   var modal = new bootstrap.Modal(document.getElementById("statistic_modal"));
 
@@ -132,7 +157,6 @@ $(document).ready(function () {
       { width: "20%" },
       { width: "10%" },
       { width: "10%" },
-      { width: "10%" },
     ],
     lengthMenu: [
       [5, 10, 20, -1],
@@ -142,7 +166,30 @@ $(document).ready(function () {
   for (var i = 0; i < exams.length; i++) {
     table.row.add(exams[i]);
   }
+  //
+  var tableStudentInExam = $("#students-exam").DataTable({
+    language: {
+      search: "Tìm kiếm",
+      lengthMenu: "Hiển thị _MENU_ bài thi mỗi trang",
+      info: "Hiển thị từ _START_ đến _END_ của _TOTAL_ bài thi",
+      infoEmpty: "Không có bài thi nào",
+      infoFiltered: "(lọc từ _MAX_ bài thi tất cả)",
+      zeroRecords: "Không tìm thấy bài thi nào",
+      paginate: {
+        first: "Đầu tiên",
+        last: "Cuối cùng",
+      },
+    },
+    lengthMenu: [
+      [5, 10, 20, -1],
+      [5, 10, 20, "Tất cả"],
+    ],
+  });
+  for (var i = 0; i < students.length; i++) {
+    tableStudentInExam.row.add(students[i]);
+  }
   table.draw();
+  tableStudentInExam.draw();
   $("#statusFilter").on("change", function () {
     table.columns(4).search(this.value).draw();
   });

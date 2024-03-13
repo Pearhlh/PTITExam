@@ -5,7 +5,7 @@
   <meta charset="utf-8" />
   <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-  <title>PTIT Exam - Home page</title>
+  <title>List of exams</title>
   <meta content="" name="description" />
   <meta content="" name="keywords" />
 
@@ -26,7 +26,7 @@
 
   <link href="assets/css/admin-dashboard.css" rel="stylesheet" />
   <link rel="stylesheet" href="assets/css/style.css" />
-
+  <link rel="stylesheet" href="assets/css/admin-examlist.css" />
   <link rel="stylesheet" href="assets/css/home-admin.css" />
 </head>
 
@@ -285,11 +285,24 @@
                           </div>
                           <div class="row">
                             <div class="card">
-                              <div class="card-body point-distribution pb-0">
-                                <h5 class="card-title">Phân phối điểm số</h5>
+                              <div class="card-bod pb-0">
+                                <h5 class="card-title" style="text-align: center;">Phân phối điểm số</h5>
+                                <div class="point-distribution">
 
-
+                                </div>
                               </div>
+                              <table id="students-exam" class="display">
+                                <thead>
+                                  <tr>
+                                    <th>Mã sinh viên</th>
+                                    <th>Tên sinhv viên</th>
+                                    <th>Lớp</th>
+                                    <th>Điểm số</th>
+                                    <th>Chi tiết</th>
+                                  </tr>
+                                </thead>
+                                <tbody></tbody>
+                              </table>
                             </div>
                         </section>
 
@@ -312,6 +325,7 @@
                     <th>Kết thúc</th>
                     <th>Trạng thái</th>
                     <th>Thống kê</th>
+                    <th></th>
                   </tr>
                 </thead>
                 <tbody></tbody>

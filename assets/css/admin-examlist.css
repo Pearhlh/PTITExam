@@ -1,0 +1,6 @@
+#students-exam_wrapper thead th span {
+  color: white !important;
+}
+#students-exam_wrapper .dt-layout-row:nth-child(1) {
+  display: none !important;
+}
