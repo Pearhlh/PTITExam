@@ -4,7 +4,6 @@ const students = [
   ["B21DCAT021", "Mai Xuân An", "E21CQCN03-B", "4", "3", "8.1"],
   ["B21DCVT188", "Đậu Quang Hiếu", "E21CQCN03-B", "4", "4", "8.3"],
 ];
-import { exams } from "./exam.js";
 $(document).ready(function () {
   var table = $("#myTable").DataTable({
     language: {

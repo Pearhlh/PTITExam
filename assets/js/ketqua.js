@@ -1,4 +1,3 @@
-import { exams } from "./exam.js";
 $(document).ready(function () {
   var table = $("#myTable").DataTable({
     language: {

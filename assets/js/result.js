@@ -2,22 +2,22 @@ var questions = [
   {
     question: "Đâu là ngôn ngữ lập trình phổ biến nhất?",
     answers: ["Python", "JavaScript", "Java", "C++"],
-    correctAnswer: "JavaScript",
+    correctAnswer: "q1=a2",
   },
   {
     question: "Trình duyệt web phổ biến nhất hiện nay là gì?",
     answers: ["Google Chrome", "Mozilla Firefox", "Microsoft Edge"],
-    correctAnswer: "Google Chrome",
+    correctAnswer: "q2=a1",
   },
   {
     question: "Hệ điều hành Android là của công ty nào?",
     answers: ["Apple", "Google", "Microsoft"],
-    correctAnswer: "Google",
+    correctAnswer: "q3=a2",
   },
   {
     question: "Ngôn ngữ đánh dấu được sử dụng để tạo nội dung website là gì?",
     answers: ["HTML", "CSS", "JavaScript"],
-    correctAnswer: "HTML",
+    correctAnswer: "q4=a1",
   },
   {
     question: 'Trong lập trình, "API" viết tắt của cụm từ gì?',
@@ -26,12 +26,12 @@ var questions = [
       "Advanced Programming Interface",
       "Application Protocol Interface",
     ],
-    correctAnswer: "Application Programming Interface",
+    correctAnswer: "q5=a1",
   },
   {
     question: "Đâu là một kiểu dữ liệu trong ngôn ngữ lập trình JavaScript?",
     answers: ["String", "Boolean", "Integer"],
-    correctAnswer: "String",
+    correctAnswer: "q6=a1",
   },
   {
     question: "Hàm console.log() được sử dụng để làm gì trong JavaScript?",
@@ -40,12 +40,12 @@ var questions = [
       "In ra giá trị của biến trong console",
       "Thực thi một hành động nhất định",
     ],
-    correctAnswer: "In ra giá trị của biến trong console",
+    correctAnswer: "q7=a2",
   },
   {
     question: "Đâu là một phần tử block-level trong HTML?",
     answers: ["span", "div", "a"],
-    correctAnswer: "div",
+    correctAnswer: "q8=a2",
   },
   {
     question: "CSS viết tắt của cụm từ gì?",
@@ -54,23 +54,24 @@ var questions = [
       "Creative Style Sheets",
       "Computer Style Sheets",
     ],
-    correctAnswer: "Cascading Style Sheet",
+    correctAnswer: "q9=a1",
   },
   {
     question:
       "Đâu là thuộc tính để thay đổi kích thước chữ của một phần tử trong CSS?",
     answers: ["font-size", "text-size", "font-style"],
-    correctAnswer: "font-size",
+    correctAnswer: "q10=a1",
   },
 ];
 
-userAnswers = JSON.parse(localStorage.getItem("userAnswers"));
+const userAnswers = JSON.parse(localStorage.getItem("userAnswers")).userAnswers;
+console.log(userAnswers);
 
 document.addEventListener("DOMContentLoaded", function () {
   const resultElement = document.getElementById("result");
   const scoreElement = document.getElementById("score");
   const reviewBtn = document.getElementById("reviewBtn");
-  const reviewSection = document.getElementById("reviewSection");
+  const reviewSection = document.querySelector(".examSection");
 
   let correctCount = 0;
   for (let i = 0; i < questions.length; i++) {
@@ -88,8 +89,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Display review section
   reviewBtn.addEventListener("click", function () {
-    reviewSection.classList.remove("hidden");
-    displayReview();
+    reviewSection.classList.toggle("hidden");
   });
 });
 
@@ -100,15 +100,16 @@ for (var i = 0; i < questions.length; i++) {
   questionElement.className = "card-header";
   questionElement.id = "q" + (i + 1);
   var questionTitle = document.createElement("h2");
-  questionTitle.textContent = "Câu hỏi " + (i + 1) + ":";
+  questionTitle.textContent =
+    "Câu hỏi " + (i + 1) + ": " + questions[i].question;
   questionElement.appendChild(questionTitle);
   questionContainer.appendChild(questionElement);
 
   var questionContent = document.createElement("div");
   questionContent.className = "card-body";
-  var questionText = document.createElement("p");
-  questionText.textContent = questions[i].question;
-  questionContent.appendChild(questionText);
+  // var questionText = document.createElement("p");
+  // questionText.textContent = questions[i].question;
+  // questionContent.appendChild(questionText);
   questionContainer.appendChild(questionContent);
 
   for (var j = 0; j < questions[i].answers.length; j++) {
@@ -128,16 +129,17 @@ for (var i = 0; i < questions.length; i++) {
     answerLabel.htmlFor = "answer" + (j + 1);
     answerLabel.textContent = questions[i].answers[j];
     answerElement.appendChild(answerLabel);
-
-    if (questions[i].answers[j] === userAnswers[i]) {
+    if ("q" + (i + 1) + "=a" + (j + 1) === userAnswers[i]) {
       inputElement.checked = true;
+      console.log(userAnswers[i]);
+
       if (questions[i].correctAnswer !== userAnswers[i]) {
-        answerLabel.style.color = "red";
+        answerLabel.style.color = "rgba(214, 20, 10, 0.8431372549)";
       }
     }
 
-    if (questions[i].answers[j] === questions[i].correctAnswer) {
-      answerLabel.style.color = "green";
+    if ("q" + (i + 1) + "=a" + (j + 1) === questions[i].correctAnswer) {
+      answerLabel.style.color = "rgba(8, 205, 8,1)";
     }
 
     questionContent.appendChild(answerElement);

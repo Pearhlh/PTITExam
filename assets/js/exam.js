@@ -314,4 +314,4 @@ const exams = [
   ],
   ["4", "Lập trình C++", "10:00", "14:00", "Tham gia tự do", "Đạt"],
 ];
-export { questionOfExam, exams };
+export { exams, questionOfExam };

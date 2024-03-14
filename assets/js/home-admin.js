@@ -43,29 +43,33 @@ const students = [
     "B21DCCN395",
     "Tống Việt Hoàng",
     "E21CQCN03-B",
+    "13:00:12 13/03/2024",
     "10",
-    "<button class='btn_view_statistic'>Xem</button>",
+    "<button class='btn_view_statistic btn_exam_result'>Xem</button>",
   ],
   [
     "B21DCVT225",
     "Lê Gia Huy",
     "E21CQCN03-B",
+    "13:03:14 13/03/2024",
     "9.4",
-    "<button class='btn_view_statistic'>Xem</button>",
+    "<button class='btn_view_statistic btn_exam_result'>Xem</button>",
   ],
   [
     "B21DCAT021",
     "Mai Xuân An",
     "E21CQCN03-B",
+    "13:20:45 13/03/2024",
     "9.4",
-    "<button class='btn_view_statistic'>Xem</button>",
+    "<button class='btn_view_statistic btn_exam_result'>Xem</button>",
   ],
   [
     "B21DCVT188",
     "Đậu Quang Hiếu",
     "E21CQCN03-B",
+    "13:15:38 13/03/2024",
     "9.6",
-    "<button class='btn_view_statistic'>Xem</button>",
+    "<button class='btn_view_statistic btn_exam_result'>Xem</button>",
   ],
 ];
 function openModal() {
@@ -154,9 +158,9 @@ $(document).ready(function () {
       { width: "20%" },
       { width: "20%" },
       { width: "20%" },
-      { width: "20%" },
+      { width: "15%" },
       { width: "10%" },
-      { width: "10%" },
+      { width: "15%" },
     ],
     lengthMenu: [
       [5, 10, 20, -1],
@@ -192,6 +196,9 @@ $(document).ready(function () {
   tableStudentInExam.draw();
   $("#statusFilter").on("change", function () {
     table.columns(4).search(this.value).draw();
+  });
+  $(".btn_exam_result").on("click", function () {
+    window.location.href = "admin-result.html";
   });
 });
 

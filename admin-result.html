@@ -57,7 +57,7 @@
       id="header"
       class="header fixed-top d-flex align-items-center">
       <div class="logo_ptit">
-        <a href="home.html">
+        <a href="home-admin.html">
           <img
             src="assets/img/logo.png"
             alt="" />
@@ -76,9 +76,8 @@
                 src="assets/img/profile-img.jpg"
                 alt="Profile"
                 class="rounded-circle" />
-              <span class="d-none d-md-block dropdown-toggle ps-2 name_user"
-                >An Hoang Hieu Huy</span
-              >
+              <span
+                class="d-none d-md-block dropdown-toggle ps-2 name_user"></span>
             </a>
 
             <ul
@@ -117,12 +116,12 @@
                 <hr class="dropdown-divider" />
               </li>
 
-              <li>
+              <li class="button_signout">
                 <a
                   class="dropdown-item d-flex align-items-center"
                   href="#">
                   <i class="bi bi-box-arrow-right"></i>
-                  <span class="button_signout">Sign Out</span>
+                  <span>Sign Out</span>
                 </a>
               </li>
             </ul>
@@ -139,8 +138,8 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            href="home.html"
-            title="index">
+            href="admin-dashboard.html"
+            title="admin-dashboard">
             <i class="bi bi-grid"></i>
             <span>Trang chủ</span>
           </a>
@@ -148,10 +147,18 @@
         <li class="nav-item">
           <a
             class="nav-link"
-            href="ketqua.html"
-            title="index">
-            <i class="bi bi-grid"></i>
-            <span>Kết quả</span>
+            href="admin-examlist.html"
+            title="admin-examlist">
+            <i class="bi bi-journal-text"></i><span>Danh sách bài thi</span>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="admin-studentlist.html"
+            title="admin-studentlist">
+            <i class="bi bi-layout-text-window-reverse"></i
+            ><span>Danh sách sinh viên</span>
           </a>
         </li>
       </ul>
@@ -170,7 +177,6 @@
                     <p class="name_exam">Nhập môn lập trình</p>
                     <p id="result"></p>
                     <p id="score"></p>
-                    <button id="reviewBtn">Xem lại bài làm</button>
                   </div>
                   <div class="examSection hidden">
                     <h1

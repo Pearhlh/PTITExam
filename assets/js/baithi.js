@@ -1,4 +1,4 @@
-import { questionOfExam, exams } from "./exam.js";
+import { exams, questionOfExam } from "./exam.js";
 $(document).ready(function () {
   const formExam = $("#questionContainer");
   const currentUrl = window.location.href;
@@ -80,28 +80,15 @@ $(document).ready(function () {
   }
   $(".button_submit").on("click", function () {
     const userAnswers = formExam.serialize().split("&");
-    let userCorrectAnswer = 0;
+    console.log(userAnswers);
     let detailExam = {};
-    const detailAnswers = [];
-    for (let index in correctAnswers) {
-      if (userAnswers.indexOf(correctAnswers[index]) != -1) {
-        userCorrectAnswer++;
-        detailAnswers.push([index, "true"]);
-      } else {
-        detailAnswers.push([index, "false"]);
-      }
-    }
-    const examLocal = JSON.parse(localStorage.getItem("exam")) || [];
-    const examTmp = [...examLocal];
     detailExam = {
       name: examHeader,
-      detailAnswers,
-      correctNumber: userCorrectAnswer,
-      pass: userCorrectAnswer >= 5 ? "Đạt" : "Không đạt",
+
+      userAnswers: userAnswers,
     };
-    examTmp.push(detailExam);
-    localStorage.setItem("exam", JSON.stringify(examTmp));
-    window.location.href = `ketqua.html`;
+    localStorage.setItem("userAnswers", JSON.stringify(detailExam));
+    window.location.href = `result.html`;
   });
 
   // Đồng hồ đếm ngược
