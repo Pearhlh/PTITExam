@@ -1,15 +1,36 @@
 const exams = [
-  ["1", "Nhập môn lập trình", "10:00", "11:00", "Tham gia tự do", "Đạt"],
+  [
+    "1",
+    "Nhập môn lập trình",
+    "10:00",
+    "11:00",
+    "Tham gia tự do",
+    "<button class='btn_view_statistic btn_exam_result'>Xem</button>",
+  ],
   [
     "2",
     "Cấu trúc dữ liệu và giải thuật",
     "12:00",
     "14:00",
     "Tham gia tự do",
-    "Đạt",
+    "<button class='btn_view_statistic btn_exam_result'>Xem</button>",
   ],
-  ["3", "Nhập môn trí tuệ nhân tạo", "16:00", "18:00", "Tham gia tự do", "Đạt"],
-  ["4", "Lập trình C++", "10:00", "14:00", "Tham gia tự do", "Đạt"],
+  [
+    "3",
+    "Nhập môn trí tuệ nhân tạo",
+    "16:00",
+    "18:00",
+    "Tham gia tự do",
+    "<button class='btn_view_statistic btn_exam_result'>Xem</button>",
+  ],
+  [
+    "4",
+    "Lập trình C++",
+    "10:00",
+    "14:00",
+    "Tham gia tự do",
+    "<button class='btn_view_statistic btn_exam_result'>Xem</button>",
+  ],
 ];
 
 $(document).ready(function () {
@@ -53,4 +74,7 @@ $(document).ready(function () {
       var id = $(this).find("td").first().text();
       window.location.href = `baithi.html?id=${id}`;
     });
+  $(".btn_exam_result").on("click", function () {
+    window.location.href = "admin-result.html";
+  });
 });
