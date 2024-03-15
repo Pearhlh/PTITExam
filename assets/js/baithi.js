@@ -80,6 +80,10 @@ $(document).ready(function () {
   }
   $(".button_submit").on("click", function () {
     const userAnswers = formExam.serialize().split("&");
+    if (userAnswers.length < questions.length) {
+      alert("Vui lòng hoàn thành tất cả các câu hỏi!");
+      return;
+    }
     console.log(userAnswers);
     let detailExam = {};
     detailExam = {

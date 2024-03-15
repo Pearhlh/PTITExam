@@ -302,7 +302,7 @@ const questionOfExam = [
   ],
 ];
 const exams = [
-  ["1", "Nhập môn lập trình", "10:00", "11:00", "Tham gia tự do", "Đạt"],
+  ["1", "Nhập môn lập trình", "10:00", "11:00", "Tham gia tự do", "Chưa làm"],
   ["2", "Trí tuệ nhân tạo", "12:00", "14:00", "Tham gia tự do", "Đạt"],
   [
     "3",
