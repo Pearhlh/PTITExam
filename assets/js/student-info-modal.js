@@ -4,7 +4,7 @@ const exams = [
     "Nhập môn lập trình",
     "10:00",
     "11:00",
-    "Tham gia tự do",
+    "9.0",
     "<button class='btn_view_statistic btn_exam_result'>Xem</button>",
   ],
   [
@@ -12,7 +12,7 @@ const exams = [
     "Cấu trúc dữ liệu và giải thuật",
     "12:00",
     "14:00",
-    "Tham gia tự do",
+    "9.0",
     "<button class='btn_view_statistic btn_exam_result'>Xem</button>",
   ],
   [
@@ -20,7 +20,7 @@ const exams = [
     "Nhập môn trí tuệ nhân tạo",
     "16:00",
     "18:00",
-    "Tham gia tự do",
+    "9.0",
     "<button class='btn_view_statistic btn_exam_result'>Xem</button>",
   ],
   [
@@ -28,7 +28,7 @@ const exams = [
     "Lập trình C++",
     "10:00",
     "14:00",
-    "Tham gia tự do",
+    "9.0",
     "<button class='btn_view_statistic btn_exam_result'>Xem</button>",
   ],
 ];
