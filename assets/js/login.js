@@ -80,11 +80,13 @@ signInForm.addEventListener("submit", (e) => {
     const getRequest = objectStore.getAll();
     getRequest.onsuccess = function (event) {
       const users = event.target.result;
+      var ok = 0;
       users.forEach((user) => {
         if (
           usernameSignIn.value === user.username &&
           passwordSignIn.value === user.password
         ) {
+          ok = 1;
           const newUser = {
             username: user.username,
             email: user.email,
@@ -100,7 +102,9 @@ signInForm.addEventListener("submit", (e) => {
           }
         }
       });
-      erorrMessageSignIn.innerHTML = "Tài khoản và mật khẩu không đúng";
+      if (ok == 0) {
+        erorrMessageSignIn.innerHTML = "Tài khoản và mật khẩu không đúng";
+      }
     };
   };
 });
